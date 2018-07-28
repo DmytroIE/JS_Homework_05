@@ -99,7 +99,6 @@ const users = [
   },
 ];
 
-
 /**
  * Получить массив имен (поле name) всех пользователей
  */
@@ -125,7 +124,7 @@ console.log(getUsersByEyeColor(users, 'blue')); // [объект Moore Hensley, 
  * Получить массив имен пользователей по полу (поле gender)
  */
 const getUsersByGender = (arr, gender) => {
-  return arr.filter(x=>x.gender===gender);
+  return arr.filter(x=>x.gender===gender).map(y=>y.name);
 };
 
 console.log(getUsersByGender(users, 'male')); // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
@@ -180,7 +179,7 @@ console.log(getTotalBalance(users)); // 20916
  * Массив имен всех пользователей у которых есть друг с указанным именем
  */
 const getUsersByFriend = (arr, name) => {
-  return arr.filter(x=>x.friends.includes(name));
+  return arr.filter(x=>x.friends.includes(name)).map(y=>y.name);
 };
 
 console.log(getUsersByFriend(users, 'Briana Decker')); // [ 'Sharlene Bush', 'Sheree Anthony' ]
@@ -213,7 +212,7 @@ console.log(getAllSkills(users));
 * Массив имен (поле name) людей, отсортированных в зависимости от количества их друзей (поле friends)
 */
 const getUserNamesSortedByFriendsCount = arr => {
-  return arr.sort((a, b)=>a.friends.length-b.friends.length);
+  return arr.sort((a, b)=>a.friends.length-b.friends.length).map(y=>y.name);
 };
 
 console.log(getUserNamesSortedByFriendsCount(users)); 
