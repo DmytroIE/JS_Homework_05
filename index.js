@@ -196,8 +196,6 @@ console.log(getUsersByFriend(users, 'Goldie Gentry')); // [ 'Elma Head', 'Sheree
 * повторяющихся скиллов и они должны быть отсортированы в алфавитном порядке
 */
 
-debugger
-
 const getAllSkills = arr => {
   const obj={};
   arr.forEach(x=>x.skills.forEach(y=>obj[y]=true));
